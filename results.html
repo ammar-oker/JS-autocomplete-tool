@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Results</title>
+</head>
+
+<body>
+    <h1>Country Selected: <span style="color: blue;" id="result"></span></h1>
+    <script src="./urlParameters.js"></script>
+    <script>
+        var replaced = linkObject.mycountry.replace('+', ' ');
+        function titleCase(str) {
+            var splitStr = str.toLowerCase().split(' ');
+            for (var i = 0; i < splitStr.length; i++) {
+                splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+            }
+            return splitStr.join(' ');
+        }
+        document.getElementById('result').innerText = titleCase(replaced);
+    </script>
+</body>
+
+</html>
